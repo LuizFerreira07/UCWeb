@@ -1,0 +1,136 @@
+style.css
+
+/* --- Reset e Variáveis --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Layout Flexível com CSS Grid --- */
+.hotsite-container {
+    background: #ffffff;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Duas colunas iguais no desktop */
+    overflow: hidden;
+}
+
+/* Coluna de Texto */
+.hotsite-info {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hotsite-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hotsite-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #bdc3c7;
+}
+
+/* --- Estilização Avançada de Formulários --- */
+.hotsite-form-wrapper {
+    padding: 50px;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    /* Flexbox para empilhar label e input */
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 12px 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Feedback visual de foco (Acessibilidade + UI/UX) */
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Estilização do Botão */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: #2980b9;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 768px) {
+    .hotsite-container {
+        grid-template-columns: 1fr;
+        /* Muda para 1 coluna no mobile */
+    }
+
+    .hotsite-info {
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .hotsite-form-wrapper {
+        padding: 40px 30px;
+    }
+}
