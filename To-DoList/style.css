@@ -1,0 +1,45 @@
+:root{
+    --bg-color: #F3F4F6;
+    --cards: #ffffff;
+    --txt-prim: #111827;
+    --txt-sec: #6b7280;
+    --bordasDiv: #e5e7eb;
+    --cor-principal: #4f46e5;
+    --cor-sucesso: #10b981;
+    --cor-atenção: #ef4444;
+}
+
+body{ 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', roboto, oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.topo{ 
+    background-color: var(--cor-principal); color: var(--txt-prim); padding: 10px; 
+    font-size: 20px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: left;
+}
+
+.container{ 
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+}
+
+#cadastro{
+    border:2px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px ;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group{
+    background-color: var(--bg-color); color: var(--txt-prim); padding: 10px;
+    font-size: 16px;
+    display: flex;
+    border-radius: none;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autopeças do Tião - Catálogo e Carrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header class="topo">
+        <div class="container header-content">
+            <div class="logo-area" onclick="navegarPara('vitrine')">
+                <img src="Tiao.png" alt="Logotipo Autopeças do Tião" class="logo">
+                <h2>Autopeças do Tião</h2>
+            </div>
+            
+            <nav class="menu">
+                <button class="btn-menu" onclick="navegarPara('vitrine')">Catálogo</button>
+                <button class="btn-menu btn-carrinho" onclick="navegarPara('carrinho')">
+                    🛒 Carrinho (<span id="contadorCarrinhoMenu">0</span>)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- SEÇÃO 1: VITRINE DE PRODUTOS E BUSCA -->
+        <section id="sec-vitrine" class="secao ativo">
+            <div class="barra-busca">
+                <input type="text" id="inputBusca" placeholder="Buscar peça por nome ou código..." onkeyup="filtrarCatalogo()">
+                <button onclick="filtrarCatalogo()">Pesquisar</button>
+            </div>
+
+            <!-- Onde os produtos serão injetados pelo JS -->
+            <div id="gridProdutos" class="grid-produtos"></div>
+        </section>
+
+        <!-- SEÇÃO 2: PÁGINA DO CARRINHO COMPLETA -->
+        <section id="sec-carrinho" class="secao">
+            <h1>Seu Carrinho de Compras</h1>
+            
+            <div class="carrinho-container">
+                <div class="tabela-carrinho-area">
+                    <table class="tabela-carrinho">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Preço Unit.</th>
+                                <th>Qtd</th>
+                                <th>Subtotal</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpoTabelaCarrinho">
+                            <!-- Injetado via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="resumo-pedido">
+                    <h3>Resumo do Pedido</h3>
+                    
+                    <div class="calculo-frete">
+                        <label>Calcular Frete:</label>
+                        <div class="frete-form">
+                            <input type="text" id="cepFrete" placeholder="00000-000" maxlength="9" oninput="aplicarMascaraCEP(event)">
+                            <button id="btnFrete" onclick="calcularFrete()">OK</button>
+                        </div>
+                        <small id="resultadoFrete"></small>
+                    </div>
+
+                    <div class="totais">
+                        <p>Total em Produtos: <strong id="totalProdutos">R$ 0,00</strong></p>
+                        <p>Valor do Frete: <strong id="valorFrete">R$ 0,00</strong></p>
+                        <h2 class="valor-final">Total: <span id="totalFinal">R$ 0,00</span></h2>
+                    </div>
+
+                    <button class="btn-comprar" onclick="finalizarCompra()">Finalizar Compra</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Notificação Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

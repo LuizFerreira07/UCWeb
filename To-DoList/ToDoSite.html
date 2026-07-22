@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <header class="topo">
+        <h1>To Do List</h1>
+     </header>
+
+     <main class="container">
+        <section id="cadastro">
+            <h2>Cadastro de nova atividade</h2>
+            <form id="formCadastro">
+
+                <div class="form-group">
+                    <label>Nome da Atividade*:</label>
+                    <input type="text" id="nome" class="obrigatorio" placeholder="Digite o nome da Atividade:">
+                </div>
+
+                <div class="form-group">
+                    <label for ="DataHora">Data/Hora da Arividade*:</label>
+                    <input type="datetime-local" id="data-hora" name="data-hora">
+                </div>
+
+                <div class="form-group">
+                    <label>Descrição:</label>
+                    <input type="text" id="desc" class="opcional" placeholder="Digite a descrição da tarefa:">
+                </div>
+                
+                <div class="btnSub">
+                    <button type="submit">Cadastrar Atividade</button>
+                </div>
+            </form>
+        </section>
+     </main>
+</body>
+</html>
